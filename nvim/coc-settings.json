@@ -1,0 +1,10 @@
+{
+  "python.jediEnabled": false,
+  "python.venvPath": "~/.pyenv",
+  "python.autoUpdateLanguageServer": true,
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Path": "~/.local/bin/flake8",
+  "python.linting.flake8Args": [
+    "--ignore=E501, W391, E203"
+  ]
+}
