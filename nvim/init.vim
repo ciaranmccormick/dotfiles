@@ -10,7 +10,8 @@ set softtabstop=4
 set expandtab
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme codedark
+let g:airline_theme = 'codedark'
 
 " set python version
 "let g:python3_host_prog = '/home/ciaran/.pyenv/versions/neovimpy/bin/python'
