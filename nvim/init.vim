@@ -6,6 +6,7 @@ set number
 set relativenumber
 set numberwidth=2
 set tabstop=4
+set nowrap
 set softtabstop=4
 set expandtab
 syntax enable
@@ -54,3 +55,4 @@ augroup end
 " Fold XML files
 let g:xml_syntax_folding=1
 au FileType xml setlocal foldmethod=syntax
+

@@ -1,18 +1,30 @@
 call plug#begin()
-Plug 'airblade/vim-gitgutter'
-Plug 'altercation/vim-colors-solarized'
-Plug 'tomasiser/vim-code-dark'
+
+" Make vim obey editorconfig
 Plug 'editorconfig/editorconfig-vim'
-Plug 'honza/vim-snippets'
+
+" Fuzzy search
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
+" Conquer of Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'preservim/nerdtree'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
+
+" UI and Colour Schemes
+Plug 'airblade/vim-gitgutter'
 Plug 'sjl/badwolf'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+" Easy code commenting
+Plug 'tpope/vim-commentary'
+" Unix shell commands
+Plug 'tpope/vim-eunuch'
+" Git commands
+Plug 'tpope/vim-fugitive'
+" Surrounding text
+Plug 'tpope/vim-surround'
+
 call plug#end()
+
 
