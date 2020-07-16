@@ -2,9 +2,14 @@
   "python.jediEnabled": false,
   "python.venvPath": "~/.pyenv",
   "python.autoUpdateLanguageServer": true,
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "~/.local/bin/black",
+  "python.linting.pylintPath": "~/.local/bin/pylint",
+  "python.linting.pylintEnabled":false,
   "python.linting.flake8Enabled": true,
   "python.linting.flake8Path": "~/.local/bin/flake8",
   "python.linting.flake8Args": [
     "--ignore=E501, W391, E203"
-  ]
+  ],
+  "coc.preferences.formatOnSaveFiletypes": ["python"]
 }

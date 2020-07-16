@@ -9,9 +9,8 @@ set tabstop=4
 set softtabstop=4
 set expandtab
 syntax enable
-set background=dark
-colorscheme codedark
-let g:airline_theme = 'codedark'
+colorscheme badwolf
+let g:airline_theme = 'badwolf'
 
 " set python version
 "let g:python3_host_prog = '/home/ciaran/.pyenv/versions/neovimpy/bin/python'
@@ -20,7 +19,7 @@ let g:python3_host_prog = '~/.pyenv/versions/3.6.9/bin/python3.6'
 
 " Neomake allows plugins like Syntastic work asynchronously
 " When writing a buffer no delay, and when on normal mode changes afer delay
-call neomake#configure#automake('nw', 750)
+" call neomake#configure#automake('nw', 750)
 
 " For coc: TextEdit might fail if hidden is not set.
 set hidden
@@ -52,3 +51,6 @@ augroup mygroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
+" Fold XML files
+let g:xml_syntax_folding=1
+au FileType xml setlocal foldmethod=syntax

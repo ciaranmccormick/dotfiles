@@ -16,10 +16,14 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 " FZF mappings
 nnoremap <silent> <leader>n :Files<CR>
 
-" NERD Tree mappings
-map <silent> <leader>m :NERDTreeToggle<CR>
+" Rg mappings
+nnoremap <silent> <leader>b :Rg<CR>
+
 
 " CoC mappings
+
+" CoC explorer
+nmap <space>m :CocCommand explorer
 
 " Coc-snippets complete mapping
 imap <C-l> <Plug>(coc-snippets-expand)
@@ -64,5 +68,5 @@ endfunction
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
 " Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>f <Plug>(coc-format-selected)
+nmap <leader>f <Plug>(coc-format-selected)
