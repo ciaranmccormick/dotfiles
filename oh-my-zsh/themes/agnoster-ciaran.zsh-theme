@@ -252,6 +252,13 @@ prompt_pyenv() {
   fi
 }
 
+prompt_newline() {
+  prompt_end
+  CURRENT_BG='NONE'
+  echo -n "\n"
+
+}
+
 ## Main prompt
 build_prompt() {
   RETVAL=$?
@@ -260,6 +267,7 @@ build_prompt() {
   prompt_pyenv
   prompt_aws
   prompt_context
+  prompt_newline
   prompt_dir
   prompt_git
   prompt_bzr
