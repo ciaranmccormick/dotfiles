@@ -10,8 +10,7 @@ Plug 'junegunn/fzf.vim'
 " Conquer of Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" UI and Colour Schemes
-Plug 'airblade/vim-gitgutter'
+" UI and Color Schemes
 Plug 'sjl/badwolf'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -26,5 +25,4 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 
 call plug#end()
-
 
