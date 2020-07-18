@@ -16,7 +16,9 @@ let g:airline_theme = 'badwolf'
 " set python version
 "let g:python3_host_prog = '/home/ciaran/.pyenv/versions/neovimpy/bin/python'
 let g:python3_host_prog = '~/.pyenv/versions/3.6.9/bin/python3.6'
-'
+
+" Disables the searching for env on the airline
+let g:airline#extensions#coc#enabled ='0'
 
 " Neomake allows plugins like Syntastic work asynchronously
 " When writing a buffer no delay, and when on normal mode changes afer delay
@@ -52,7 +54,13 @@ augroup mygroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
+" So that the coc-git gutter refreshed automatically
+autocmd CursorHold * CocCommand git.refresh
+
 " Fold XML files
 let g:xml_syntax_folding=1
 au FileType xml setlocal foldmethod=syntax
+
+" Coc extensions
+let g:coc_global_extensions = ['coc-python', 'coc-git', 'coc-pyright']
 
