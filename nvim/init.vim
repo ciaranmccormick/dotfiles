@@ -6,7 +6,6 @@ set number
 set relativenumber
 set numberwidth=2
 set tabstop=4
-set nowrap
 set softtabstop=4
 set expandtab
 syntax enable
