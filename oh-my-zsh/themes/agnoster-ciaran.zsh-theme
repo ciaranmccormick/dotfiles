@@ -263,15 +263,15 @@ prompt_newline() {
 build_prompt() {
   RETVAL=$?
   prompt_status
-  prompt_virtualenv
-  prompt_pyenv
-  prompt_aws
   prompt_context
-  prompt_newline
+  prompt_aws
   prompt_dir
   prompt_git
   prompt_bzr
   prompt_hg
+  prompt_newline
+  prompt_virtualenv
+  prompt_pyenv
   prompt_end
 }
 
