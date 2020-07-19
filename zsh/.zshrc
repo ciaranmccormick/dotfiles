@@ -110,3 +110,6 @@ eval "$(register-python-argcomplete pipx)"
 
 # Completions for kitty
 source <(kitty + complete setup zsh)
+
+# Switch off oh-my-zsh case insensitivity
+CASE_SENSITIVE="true"
