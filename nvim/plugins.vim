@@ -24,5 +24,8 @@ Plug 'tpope/vim-fugitive'
 " Surrounding text
 Plug 'tpope/vim-surround'
 
+" Folds
+Plug 'tmhedberg/SimpylFold'
+
 call plug#end()
 
