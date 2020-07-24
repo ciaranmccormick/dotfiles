@@ -74,6 +74,4 @@ autocmd CursorHold * CocCommand git.refresh
 let g:xml_syntax_folding=1
 au FileType xml setlocal foldmethod=syntax
 
-" Coc extensions
-let g:coc_global_extensions = ['coc-python', 'coc-git', 'coc-pyright']
 
