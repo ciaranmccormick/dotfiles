@@ -3,6 +3,9 @@ call plug#begin()
 " Make vim obey editorconfig
 Plug 'editorconfig/editorconfig-vim'
 
+" Gitignore file generation
+Plug 'fszymanski/fzf-gitignore', {'do': ':UpdateRemotePlugins'}
+
 " Fuzzy search
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
