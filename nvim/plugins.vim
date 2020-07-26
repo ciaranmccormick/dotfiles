@@ -30,5 +30,8 @@ Plug 'tpope/vim-surround'
 " Folds
 Plug 'tmhedberg/SimpylFold'
 
+" Tagbar replacement
+Plug 'liuchengxu/vista.vim'
+
 call plug#end()
 

@@ -9,5 +9,6 @@
   "python.linting.flake8Args": [
     "--ignore=E501, W391, E203"
   ],
-  "python.venvPath": "~/.pyenv"
+  "python.venvPath": "~/.pyenv",
+  "snippets.userSnippetsDirectory": "~/dotfiles/nvim/snippets"
 }
