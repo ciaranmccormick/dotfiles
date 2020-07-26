@@ -28,7 +28,6 @@ let g:airline_section_z = "%l/%L col:%c"
 " remove separators for empty sections
 let g:airline_skip_empty_sections = 1
 
-  
 let g:airline#extensions#fugitiveline#enabled = 0
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#branch#format = 2
@@ -75,5 +74,5 @@ let g:xml_syntax_folding=1
 au FileType xml setlocal foldmethod=syntax
 
 " Coc extensions
-let g:coc_global_extensions = ['coc-python', 'coc-git', 'coc-snippets', 'coc-markdownlint']
+let g:coc_global_extensions = ['coc-python', 'coc-git', 'coc-snippets', 'coc-markdownlint', 'coc-actions']
 

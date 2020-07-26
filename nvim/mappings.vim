@@ -11,6 +11,9 @@ inoremap jk <esc>
 inoremap <esc> <nop>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
+" execute visual selection with python
+vnoremap r :w !python<CR>
+
 " --------------- Plugin Mappings ---------------
 
 " FZF mappings
@@ -22,24 +25,20 @@ nnoremap <silent> <leader>b :Rg<CR>
 
 " CoC mappings
 
-" CoC explorer
-nmap <space>m :CocCommand explorer
-
 " Coc-snippets complete mapping
 imap <C-l> <Plug>(coc-snippets-expand)
 
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
