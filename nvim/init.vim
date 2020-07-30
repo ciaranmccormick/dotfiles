@@ -76,3 +76,5 @@ au FileType xml setlocal foldmethod=syntax
 " Coc extensions
 let g:coc_global_extensions = ['coc-python', 'coc-git', 'coc-snippets', 'coc-markdownlint', 'coc-actions']
 
+" SimpylFold settings
+let g:SimpylFold_fold_import = 0
