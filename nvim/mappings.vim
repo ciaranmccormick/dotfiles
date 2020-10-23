@@ -53,6 +53,12 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+" Use <leader>si to sort imports and write buffer
+nmap <silent> <leader>si :call <SID>sort_imports()<CR>:w<CR>
+function! s:sort_imports()
+    call CocAction('runCommand', 'python.sortImports')
+endfunction
+
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>

@@ -33,5 +33,7 @@ Plug 'tmhedberg/SimpylFold'
 " Tagbar replacement
 Plug 'liuchengxu/vista.vim'
 
+Plug 'Yggdroot/indentLine'
+
 call plug#end()
 
