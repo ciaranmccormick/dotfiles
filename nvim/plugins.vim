@@ -35,5 +35,11 @@ Plug 'liuchengxu/vista.vim'
 
 Plug 'Yggdroot/indentLine'
 
+" Pytest
+Plug 'alfredodeza/pytest.vim'
+
+" Emmet plugin
+Plug 'mattn/emmet-vim'
+
 call plug#end()
 
