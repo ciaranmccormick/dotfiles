@@ -75,3 +75,11 @@ nmap <leader>rn <Plug>(coc-rename)
 " Formatting selected code.
 xmap <leader>f <Plug>(coc-format-selected)
 nmap <leader>f <Plug>(coc-format-selected)
+
+" Pytest
+nmap <silent><leader>ptc <Esc>:Pytest class<CR>
+nmap <silent><leader>ptf <Esc>:Pytest file<CR>
+nmap <silent><leader>ptm <Esc>:Pytest method<CR>
+
+" Unix commands
+nmap <silent><leader>ls <Esc>:!ls %:h<CR>
