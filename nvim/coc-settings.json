@@ -3,6 +3,7 @@
   "python.autoUpdateLanguageServer": true,
   "python.formatting.provider":"black",
   "python.formatting.blackPath":"~/.local/bin/black",
+  "python.formatting.blackArgs":["-S"],
   "python.jediEnabled": false,
   "python.linting.flake8Enabled": true,
   "python.linting.flake8Path": "~/.local/bin/flake8",

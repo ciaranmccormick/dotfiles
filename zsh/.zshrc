@@ -86,7 +86,7 @@ source $ZSH/oh-my-zsh.sh
 
 # FZF Configuration
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
-export FZF_DEFAULT_COMMAND='find -L ! -path "./.git/*" ! -path "./.*_cache/*" ! -path ".*/node_modules/*" ! -path ".*/.venv/*"'
+export FZF_DEFAULT_COMMAND='find -L ! -path ".*/.git/*" ! -path "./.*_cache/*" ! -path ".*/node_modules/*" ! -path ".*/.venv/*"'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Pyenv Configuration

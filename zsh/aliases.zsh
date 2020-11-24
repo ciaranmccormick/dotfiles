@@ -7,3 +7,9 @@ alias kfs='kitty @ set-font-size'
 alias kcw='kitty @ close-window --self'
 alias kwt='kitty @ set-window-title'
 alias ktt='kitty @ set-tab-title'
+
+# Git aliases
+alias gco='git checkout'
+alias gst='git status'
+alias gpu='git push'
+alias gpl='git pull'
