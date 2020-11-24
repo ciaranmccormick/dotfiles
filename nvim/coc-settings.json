@@ -2,11 +2,10 @@
   "coc.preferences.formatOnSaveFiletypes": ["python"],
   "python.autoUpdateLanguageServer": true,
   "python.formatting.provider":"black",
-  "python.formatting.blackPath":"~/.local/bin/black",
-  "python.formatting.blackArgs":["-S"],
+  "python.formatting.blackPath":"black",
   "python.jediEnabled": false,
   "python.linting.flake8Enabled": true,
-  "python.linting.flake8Path": "~/.local/bin/flake8",
+  "python.linting.flake8Path": "flake8",
   "python.linting.flake8Args": [
     "--ignore=E501, W391, E203"
   ],
