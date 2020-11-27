@@ -56,7 +56,7 @@ nmap <silent> gr <Plug>(coc-references)
 " Use <leader>si to sort imports and write buffer
 nmap <silent> <leader>si :call <SID>sort_imports()<CR>:w<CR>
 function! s:sort_imports()
-    call CocAction('runCommand', 'python.sortImports')
+    call CocAction('runCommand', 'pyright.organizeimports')
 endfunction
 
 
@@ -70,6 +70,12 @@ function! s:show_documentation()
   endif
 endfunction
 
+" Use Q to show documentation in preview window.
+nnoremap <silent> Q :call <SID>show_quickfix()<CR>
+function! s:show_quickfix()
+        call CocAction('doQuickfix')
+endfunction
+
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
 " Formatting selected code.
@@ -77,9 +83,11 @@ xmap <leader>f <Plug>(coc-format-selected)
 nmap <leader>f <Plug>(coc-format-selected)
 
 " Pytest
-nmap <silent><leader>ptc <Esc>:Pytest class<CR>
-nmap <silent><leader>ptf <Esc>:Pytest file<CR>
-nmap <silent><leader>ptm <Esc>:Pytest method<CR>
+nmap <silent><leader>ta <Esc>:Pytest file<CR>
+nmap <silent><leader>tc <Esc>:Pytest class<CR>
+nmap <silent><leader>tf <Esc>:Pytest function<CR>
+nmap <silent><leader>tm <Esc>:Pytest method<CR>
+nmap <silent><leader>tp <Esc>:Pytest project<CR>
 
 " Unix commands
 nmap <silent><leader>ls <Esc>:!ls %:h<CR>

@@ -1,14 +1,20 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["python", "markdown", "typescript", "javascript", "css", "scss"],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "python",
+    "markdown",
+    "typescript",
+    "javascript",
+    "css",
+    "scss",
+    "json"
+  ],
   "python.autoUpdateLanguageServer": true,
-  "python.formatting.provider":"black",
-  "python.formatting.blackPath":"black",
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "black",
   "python.jediEnabled": false,
   "python.linting.flake8Enabled": true,
   "python.linting.flake8Path": "flake8",
-  "python.linting.flake8Args": [
-    "--ignore=E501, W391, E203"
-  ],
+  "python.linting.flake8Args": ["--ignore=E501, W391, E203"],
   "python.sortImports.path": "isort",
   "python.venvPath": "~/.pyenv",
   "snippets.userSnippetsDirectory": "~/dotfiles/nvim/snippets"
