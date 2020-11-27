@@ -41,5 +41,8 @@ Plug 'alfredodeza/pytest.vim'
 " Emmet plugin
 Plug 'mattn/emmet-vim'
 
+" Typescript Syntax Highlighting
+Plug 'HerringtonDarkholme/yats.vim'
+
 call plug#end()
 

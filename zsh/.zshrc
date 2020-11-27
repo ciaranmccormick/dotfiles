@@ -70,7 +70,7 @@ ZSH_CUSTOM=$HOME/.config/oh-my-zsh-custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(django docker docker-compose git-flow)
+plugins=(django docker docker-compose git-flow nvm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -113,3 +113,4 @@ source <(kitty + complete setup zsh)
 
 # Switch off oh-my-zsh case insensitivity
 CASE_SENSITIVE="true"
+

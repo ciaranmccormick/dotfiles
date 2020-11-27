@@ -15,7 +15,7 @@ let g:airline_theme = 'badwolf'
 " set python version
 "let g:python3_host_prog = '/home/ciaran/.pyenv/versions/neovimpy/bin/python'
 let g:python3_host_prog = '~/.pyenv/versions/3.6.9/bin/python3.6'
-let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
 " Disables the searching for env on the airline
@@ -74,7 +74,22 @@ let g:xml_syntax_folding=1
 au FileType xml setlocal foldmethod=syntax
 
 " Coc extensions
-let g:coc_global_extensions = ['coc-python', 'coc-git', 'coc-snippets', 'coc-markdownlint', 'coc-actions']
+let g:coc_global_extensions = [
+        \ 'coc-python', 
+        \ 'coc-git',
+        \ 'coc-snippets',
+        \ 'coc-markdownlint', 
+        \ 'coc-actions', 
+        \ 'coc-tsserver',
+        \ 'coc-json',
+        \ 'coc-prettier',
+        \ ]
 
 " SimpylFold settings
 let g:SimpylFold_fold_import = 0
+
+" Setup Prettier command
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+" identLine.vim plugin
+let g:indentLine_setConceal = 0
