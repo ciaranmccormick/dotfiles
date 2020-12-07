@@ -91,3 +91,4 @@ nmap <silent><leader>tp <Esc>:Pytest project<CR>
 
 " Unix commands
 nmap <silent><leader>ls <Esc>:!ls %:h<CR>
+nmap <silent><C-i> <Esc>:silent !isort % :w<CR>

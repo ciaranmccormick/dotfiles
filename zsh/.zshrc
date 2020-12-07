@@ -70,7 +70,7 @@ ZSH_CUSTOM=$HOME/.config/oh-my-zsh-custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(django docker docker-compose git nvm zsh-vim-mode wd)
+plugins=(django docker docker-compose git nvm zsh-vim-mode wd poetry)
 
 source $ZSH/oh-my-zsh.sh
 
