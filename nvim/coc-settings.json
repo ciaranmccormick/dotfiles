@@ -6,7 +6,8 @@
     "javascript",
     "css",
     "scss",
-    "json"
+    "json",
+    "html"
   ],
   "python.autoUpdateLanguageServer": true,
   "python.formatting.provider": "black",

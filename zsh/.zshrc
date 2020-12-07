@@ -70,7 +70,7 @@ ZSH_CUSTOM=$HOME/.config/oh-my-zsh-custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(django docker docker-compose git-flow nvm)
+plugins=(django docker docker-compose git nvm zsh-vim-mode wd)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -98,6 +98,9 @@ eval "$(pyenv virtualenv-init -)"
 # Add scripts directory to the PATH
 PATH=$PATH:~/.scripts
 PATH=$PATH:~/.bin
+
+# Go lang configuaration
+export PATH=$PATH:/usr/local/go/bin
 
 # Hook in direnv
 eval "$(direnv hook zsh)"
