@@ -94,3 +94,5 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " identLine.vim plugin
 let g:indentLine_setConceal = 0
+
+autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
