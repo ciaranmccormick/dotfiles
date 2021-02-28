@@ -1,4 +1,3 @@
-bindkey -v
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -116,7 +115,7 @@ source <(kitty + complete setup zsh)
 # Switch off oh-my-zsh case insensitivity
 CASE_SENSITIVE="true"
 
-source ~/.config/git-flow/git-flow-completion.zsh
+source ~/.config/git-flow/git-flow-completion/git-flow-completion.zsh
 
 gch() {
  git checkout "$(git branch --all | fzf | tr -d '[:space:]')"

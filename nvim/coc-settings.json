@@ -17,5 +17,23 @@
   "python.linting.flake8Path": "flake8",
   "python.linting.flake8Args": ["--ignore=E501, W391, E203"],
   "python.venvPath": "~/.pyenv",
-  "snippets.userSnippetsDirectory": "~/dotfiles/nvim/snippets"
+  "snippets.userSnippetsDirectory": "~/dotfiles/nvim/snippets",
+  "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cpp", "objc", "objcpp"],
+      "rootPatterns": [
+        ".ccls",
+        "compile_commands.json",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "initializationOptions": {
+        "cache": {
+          "directory": "/tmp/ccls"
+        }
+      }
+    }
+  }
 }

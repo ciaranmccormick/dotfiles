@@ -44,6 +44,13 @@ Plug 'mattn/emmet-vim'
 " Typescript Syntax Highlighting
 Plug 'HerringtonDarkholme/yats.vim'
 
+" Vim Markdown
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'vimwiki/vimwiki'
+
+" C/C++ formatting
+Plug 'rhysd/vim-clang-format', {'for' : ['c', 'cpp']}
+
 " Black formatting
 "Plug 'psf/black'
 
