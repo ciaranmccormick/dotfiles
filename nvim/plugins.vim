@@ -44,5 +44,12 @@ Plug 'mattn/emmet-vim'
 " Typescript Syntax Highlighting
 Plug 'HerringtonDarkholme/yats.vim'
 
+" Black formatting
+"Plug 'psf/black'
+
+" Ultsnip
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
 call plug#end()
 

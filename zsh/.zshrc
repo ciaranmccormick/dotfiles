@@ -1,3 +1,4 @@
+bindkey -v
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -70,7 +71,7 @@ ZSH_CUSTOM=$HOME/.config/oh-my-zsh-custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(django docker docker-compose git nvm zsh-vim-mode wd poetry)
+plugins=(nvm wd poetry git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -85,8 +86,6 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # FZF Configuration
-export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
-export FZF_DEFAULT_COMMAND='find -L ! -path ".*/.git/*" ! -path "./.*_cache/*" ! -path ".*/node_modules/*" ! -path ".*/.venv/*"'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Pyenv Configuration
@@ -117,3 +116,8 @@ source <(kitty + complete setup zsh)
 # Switch off oh-my-zsh case insensitivity
 CASE_SENSITIVE="true"
 
+source ~/.config/git-flow/git-flow-completion.zsh
+
+gch() {
+ git checkout "$(git branch --all | fzf | tr -d '[:space:]')"
+}

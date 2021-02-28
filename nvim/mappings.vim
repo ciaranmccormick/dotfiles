@@ -22,6 +22,12 @@ nnoremap <silent> <leader>n :Files<CR>
 " Rg mappings
 nnoremap <silent> <leader>b :Rg<CR>
 
+nnoremap <leader>f8 :!flake8 %<CR>
+nnoremap <leader>fb :!black %<CR>
+
+
+nnoremap <leader>gs :G status<CR>
+nnoremap <leader>ga :G add %<CR>
 
 " CoC mappings
 
@@ -56,9 +62,11 @@ nmap <silent> gr <Plug>(coc-references)
 " Use <leader>si to sort imports and write buffer
 nmap <silent> <leader>si :call <SID>sort_imports()<CR>:w<CR>
 function! s:sort_imports()
-    call CocAction('runCommand', 'pyright.organizeimports')
+        :silent !isort %
+        :e
+    "call CocAction('runCommand', 'pyright.organizeimports')
 endfunction
-
+"command! SortImports call CocAction('runCommand', 'pyright.organizeimports')
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -91,4 +99,3 @@ nmap <silent><leader>tp <Esc>:Pytest project<CR>
 
 " Unix commands
 nmap <silent><leader>ls <Esc>:!ls %:h<CR>
-nmap <silent><C-i> <Esc>:silent !isort % :w<CR>

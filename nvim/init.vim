@@ -12,6 +12,8 @@ syntax enable
 colorscheme badwolf
 let g:airline_theme = 'badwolf'
 
+set clipboard=unnamedplus
+
 " set python version
 "let g:python3_host_prog = '/home/ciaran/.pyenv/versions/neovimpy/bin/python'
 let g:python3_host_prog = '~/.pyenv/versions/3.6.9/bin/python3.6'
