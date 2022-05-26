@@ -1,0 +1,6 @@
+alias -g kssh='kitty +kitten ssh'
+alias ksw='kitty @ new-window --no-response --cwd `pwd`'
+alias kfs='kitty @ set-font-size'
+alias kcw='kitty @ close-window --self'
+alias kwt='kitty @ set-window-title'
+alias ktt='kitty @ set-tab-title'
