@@ -16,11 +16,12 @@ vnoremap r :w !python<CR>
 
 " --------------- Plugin Mappings ---------------
 
-" FZF mappings
-nnoremap <silent> <leader>n :Files<CR>
-
-" Rg mappings
-nnoremap <silent> <leader>b :Rg<CR>
+" Fuzzy search
+nnoremap <silent> ff :Files!<CR>
+nnoremap <silent> fj :BTags!<CR>
+nnoremap <silent> fs :Snippets!<CR>
+nnoremap <silent> fb :Buffers!<CR>
+nnoremap <silent> fm :Marks!<CR>
 
 nnoremap <leader>fx :!xmllint --format % --output %<CR>
 

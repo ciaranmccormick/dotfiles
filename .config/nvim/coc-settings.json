@@ -9,6 +9,7 @@
     "json",
     "html"
   ],
+  "rust-analyzer.enable": true,
   "prettier.singleQuote": true,
   "python.autoUpdateLanguageServer": true,
   "python.formatting.provider": "black",
@@ -36,5 +37,7 @@
         }
       }
     }
-  }
+  },
+  "rust-analyzer.checkOnSave.command": "check",
+  "rust-analyzer.lens.enable": true
 }
