@@ -37,3 +37,4 @@ keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 
 -- Formatting --
 keymap("n", "ff", "<cmd> lua vim.lsp.buf.formatting_sync()<CR>", opts)
+
