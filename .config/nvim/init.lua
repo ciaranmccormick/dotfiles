@@ -12,6 +12,7 @@ require "user.cmp"
 require "user.lsp"
 
 -- Plugins
+require "user.lualine"
 require "user.telescope"
 require "user.treesitter"
 require "user.autopairs"
