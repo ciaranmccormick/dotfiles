@@ -48,6 +48,12 @@ return packer.startup(function(use)
 	-- Color Scheme --
 	use("tomasiser/vim-code-dark")
 
+	-- Status Line --
+	use({
+		"nvim-lualine/lualine.nvim",
+		requires = { "kyazdani42/nvim-web-devicons", opt = true },
+	})
+
 	-- cmp plugins --
 	use("hrsh7th/nvim-cmp")
 	use("hrsh7th/cmp-buffer")
