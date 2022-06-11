@@ -36,5 +36,6 @@ keymap("n", "<leader>s", "<cmd>lua require'telescope.builtin'.lsp_document_symbo
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 
 -- Formatting --
-keymap("n", "ff", "<cmd> lua vim.lsp.buf.formatting_sync()<CR>", opts)
+keymap("n", "ff", "<cmd> lua vim.lsp.buf.format()<CR>", opts)
+keymap("n", "fb", ":!blue %<CR>", opts)
 

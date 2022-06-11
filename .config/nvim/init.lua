@@ -21,18 +21,3 @@ require "user.comment"
 require "user.nvim-tree"
 require "user.toggleterm"
 require "user.whichkey"
-
-
-
---require 'statusline'
-
---local lspconfig = require('lspconfig')
---lspconfig.pyright.setup{}
---local installer = require("nvim-lsp-installer")
---installer.setup {}
-
-
--- local luasnip = require('luasnip')
--- nvim-cmp setup
--- local cmp = require('cmp')
-
