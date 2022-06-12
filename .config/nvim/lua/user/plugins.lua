@@ -40,13 +40,19 @@ packer.init({
 
 return packer.startup(function(use)
 	-- Plugins
-	use("wbthomason/packer.nvim") -- Have packer manage itself
-	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
-	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
-	use("folke/which-key.nvim")
+	use({ "wbthomason/packer.nvim" })
+	-- An implementation of the Popup API from vim in Neovim
+	use({ "nvim-lua/popup.nvim" })
+	-- Useful lua functions used by lots of plugins
+	use({ "nvim-lua/plenary.nvim" })
+	use({ "folke/which-key.nvim" })
 
 	-- Color Scheme --
-	use("tomasiser/vim-code-dark")
+	use({ "tomasiser/vim-code-dark" })
+	use("folke/lsp-colors.nvim")
+
+  -- Start up time --
+  use 'lewis6991/impatient.nvim'
 
 	-- Status Line --
 	use({
@@ -54,22 +60,24 @@ return packer.startup(function(use)
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 	})
 
+	use("lukas-reineke/indent-blankline.nvim")
+
 	-- cmp plugins --
-	use("hrsh7th/nvim-cmp")
-	use("hrsh7th/cmp-buffer")
-	use("hrsh7th/cmp-path")
-	use("hrsh7th/cmp-cmdline")
-	use("saadparwaiz1/cmp_luasnip") -- snippet completions
-	use("hrsh7th/cmp-nvim-lsp")
-	use("hrsh7th/cmp-nvim-lua")
+	use({ "hrsh7th/nvim-cmp" })
+	use({ "hrsh7th/cmp-buffer" })
+	use({ "hrsh7th/cmp-path" })
+	use({ "hrsh7th/cmp-cmdline" })
+	use({ "saadparwaiz1/cmp_luasnip" }) -- snippet completions
+	use({ "hrsh7th/cmp-nvim-lsp" })
+	use({ "hrsh7th/cmp-nvim-lua" })
 
 	-- snippets --
-	use("L3MON4D3/LuaSnip") --snippet engine
-	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
+	use({ "L3MON4D3/LuaSnip" }) --snippet engine
+	use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
 
 	-- LSP --
 	use({ "williamboman/nvim-lsp-installer", requires = { "neovim/nvim-lspconfig" } }) -- simple to use language server installer
-	use({ "jose-elias-alvarez/null-ls.nvim" })
+	use({ "ciaranmccormick/null-ls.nvim" })
 
 	-- Telescope --
 	use({ "nvim-telescope/telescope.nvim", requires = { { "nvim-lua/plenary.nvim" } } })
@@ -85,7 +93,7 @@ return packer.startup(function(use)
 
 	-- Comments --
 	use({ "numToStr/Comment.nvim" })
-	use("JoosepAlviste/nvim-ts-context-commentstring")
+	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
 
 	-- Nvim Tree --
 	use({

@@ -12,6 +12,7 @@ require "user.cmp"
 require "user.lsp"
 
 -- Plugins
+require "user.impatient"
 require "user.lualine"
 require "user.telescope"
 require "user.treesitter"
@@ -21,3 +22,4 @@ require "user.comment"
 require "user.nvim-tree"
 require "user.toggleterm"
 require "user.whichkey"
+require "user.identline"

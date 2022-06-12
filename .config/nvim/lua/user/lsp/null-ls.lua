@@ -13,13 +13,20 @@ local code_actions = null_ls.builtins.code_actions
 null_ls.setup {
   debug = false,
   sources = {
+    -- formatting
     formatting.prettier,
     formatting.black,
+    formatting.blue,
     formatting.isort,
     formatting.stylua,
     formatting.rustfmt,
+    -- diagnostics
     diagnostics.flake8,
     diagnostics.eslint,
+    diagnostics.mypy,
+    diagnostics.codespell,
+    diagnostics.markdownlint,
+    -- code actions
     code_actions.eslint,
   },
 }
