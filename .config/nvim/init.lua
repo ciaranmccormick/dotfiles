@@ -1,6 +1,3 @@
---local plugins = require 'plugins'
---plugins.setup()
-
 -- User
 require "user.options"
 require "user.keymaps"
@@ -22,4 +19,4 @@ require "user.comment"
 require "user.nvim-tree"
 require "user.toggleterm"
 require "user.whichkey"
-require "user.identline"
+require "user.indentline"
