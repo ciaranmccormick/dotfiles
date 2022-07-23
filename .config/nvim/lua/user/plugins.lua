@@ -67,21 +67,22 @@ return packer.startup(function(use)
 	use({ "hrsh7th/cmp-buffer" })
 	use({ "hrsh7th/cmp-path" })
 	use({ "hrsh7th/cmp-cmdline" })
-	use({ "saadparwaiz1/cmp_luasnip" }) -- snippet completions
 	use({ "hrsh7th/cmp-nvim-lsp" })
 	use({ "hrsh7th/cmp-nvim-lua" })
 
 	-- snippets --
+	use({ "saadparwaiz1/cmp_luasnip" }) -- snippet completions
 	use({ "L3MON4D3/LuaSnip" }) --snippet engine
 	use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
 
 	-- LSP --
 	use({ "williamboman/nvim-lsp-installer", requires = { "neovim/nvim-lspconfig" } }) -- simple to use language server installer
-	use({ "ciaranmccormick/null-ls.nvim" })
+	use({ "jose-elias-alvarez/null-ls.nvim" })
 
 	-- Telescope --
 	use({ "nvim-telescope/telescope.nvim", requires = { { "nvim-lua/plenary.nvim" } } })
-	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use({"nvim-telescope/telescope-project.nvim"})
 
 	-- Treesitter --
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
@@ -102,6 +103,8 @@ return packer.startup(function(use)
 			"kyazdani42/nvim-web-devicons",
 		},
 	})
+
+  use({"Asheq/close-buffers.vim"})
 
 	-- Toggle Term --
 	use({ "akinsho/toggleterm.nvim" })
