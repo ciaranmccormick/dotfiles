@@ -3,6 +3,7 @@ source ~/.config/zsh/tools/git.func.zsh
 # git aliases
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias gswd='git switch $(git_develop_branch)'
+alias gcob='git checkout -b'
 alias gpf='git push --force-with-lease'
 alias gpoc='git push origin $(git_current_branch)'
 alias grbd='git rebase $(git_develop_branch)'
