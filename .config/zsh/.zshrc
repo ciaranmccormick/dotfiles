@@ -1,7 +1,7 @@
+HISTFILE=~/.zsh_histfile
 HISTSIZE=100000
 SAVEHIST=100000
-HISTFILE="$HOME/.cache/zsh/history"
-ZSH_CACHE="$HOME/.cache/zsh"
+setopt SHARE_HISTORY
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:$HOME/.local/bin
