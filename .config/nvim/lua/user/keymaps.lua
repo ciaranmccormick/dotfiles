@@ -24,5 +24,3 @@ keymap("v", "p", '"_dP', opts)
 
 -- Formatting --
 keymap("n", "ff", "<cmd> lua vim.lsp.buf.format()<CR>", opts)
-keymap("n", "fb", ":!blue %<CR>", opts)
-

@@ -51,8 +51,8 @@ return packer.startup(function(use)
 	use({ "tomasiser/vim-code-dark" })
 	use("folke/lsp-colors.nvim")
 
-  -- Start up time --
-  use 'lewis6991/impatient.nvim'
+	-- Start up time --
+	use("lewis6991/impatient.nvim")
 
 	-- Status Line --
 	use({
@@ -80,9 +80,10 @@ return packer.startup(function(use)
 	use({ "jose-elias-alvarez/null-ls.nvim" })
 
 	-- Telescope --
-	use({ "nvim-telescope/telescope.nvim", requires = { { "nvim-lua/plenary.nvim" } } })
-  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-  use({"nvim-telescope/telescope-project.nvim"})
+	use({ "nvim-telescope/telescope.nvim", tag = "0.1.0", requires = { { "nvim-lua/plenary.nvim" } } })
+	use({ "nvim-telescope/telescope-file-browser.nvim" })
+	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+	use({ "nvim-telescope/telescope-project.nvim" })
 
 	-- Treesitter --
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
@@ -104,7 +105,7 @@ return packer.startup(function(use)
 		},
 	})
 
-  use({"Asheq/close-buffers.vim"})
+	use({ "Asheq/close-buffers.vim" })
 
 	-- Toggle Term --
 	use({ "akinsho/toggleterm.nvim" })
