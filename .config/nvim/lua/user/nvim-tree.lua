@@ -39,13 +39,12 @@ nvim_tree.setup { -- BEGIN_DEFAULT_OPTS
   respect_buf_cwd = false,
   view = {
     adaptive_size = false,
-    width = 30,
-    height = 30,
+    width = 40,
     hide_root_folder = false,
     side = "left",
     preserve_window_proportions = false,
-    number = false,
-    relativenumber = false,
+    number = true,
+    relativenumber = true,
     signcolumn = "yes",
     mappings = {
       custom_only = false,
@@ -132,7 +131,7 @@ nvim_tree.setup { -- BEGIN_DEFAULT_OPTS
     },
   },
   filters = {
-    dotfiles = false,
+    dotfiles = true,
     custom = {},
     exclude = {},
   },
