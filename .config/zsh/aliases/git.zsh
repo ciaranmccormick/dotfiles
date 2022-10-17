@@ -1,17 +1,34 @@
 source ~/.config/zsh/tools/git.func.zsh
 
-# git aliases
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias gswd='git switch $(git_develop_branch)'
+
+# git branch
+alias gbthis='git branch --show-current'
+
+# git checkout
 alias gcob='git checkout -b'
-alias gpf='git push --force-with-lease'
-alias gpoc='git push origin $(git_current_branch)'
-alias grbd='git rebase $(git_develop_branch)'
+
+# git fetch
 alias gfo='git fetch origin'
-alias gpr='git pull --rebase'
+alias gfod='git fetch origin $(git_develop_branch)'
+
+# git pull
+alias glum='git pull upstream $(git_main_branch)'
 alias gup='git pull --rebase'
-alias gupv='git pull --rebase -v'
 alias gupa='git pull --rebase --autostash'
 alias gupav='git pull --rebase --autostash -v'
-alias glum='git pull upstream $(git_main_branch)'
+alias gupv='git pull --rebase -v'
+
+# git push
+alias gpf='git push --force-with-lease'
+alias gpoc='git push origin $(git_current_branch)'
+alias gpof='git push origin $(git_current_branch) --force-with-lease'
+
+# git rebase
+alias grbd='git rebase $(git_develop_branch)'
+
+alias gres='git restore --staged'
+alias gre='git restore'
+
 alias gst='git status'
+alias gswd='git switch $(git_develop_branch)'
