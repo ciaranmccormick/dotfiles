@@ -11,7 +11,7 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = false
-lvim.colorscheme = "tokyonight"
+lvim.colorscheme = "codedark"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -19,6 +19,7 @@ lvim.colorscheme = "tokyonight"
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+lvim.keys.insert_mode["jk"] = "<Esc>"
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- unmap a default keymapping
@@ -86,6 +87,7 @@ lvim.builtin.treesitter.ensure_installed = {
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
+
 
 -- generic LSP settings
 
@@ -162,13 +164,42 @@ linters.setup {
   },
 }
 
--- Additional Plugins
--- lvim.plugins = {
---     {
---       "folke/trouble.nvim",
---       cmd = "TroubleToggle",
---     },
--- }
+lvim.builtin.dap.active = true
+local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
+pcall(function() require("dap-python").setup(mason_path .. "packages/debugpy/venv/bin/python") end)
+pcall(function() require("dap-python").test_runner = "pytest" end)
+
+-- Mappings
+lvim.builtin.which_key.mappings["dm"] = { "<cmd>lua require('dap-python').test_method()<cr>", "Test Method" }
+lvim.builtin.which_key.mappings["df"] = { "<cmd>lua require('dap-python').test_class()<cr>", "Test Class" }
+lvim.builtin.which_key.vmappings["d"] = {
+  name = "Debug",
+  s = { "<cmd>lua require('dap-python').debug_selection()<cr>", "Debug Selection" },
+}
+
+
+lvim.plugins = {
+ -- You can switch between vritual environmnts.
+  "AckslD/swenv.nvim",
+  "mfussenegger/nvim-dap-python",
+  "tomasiser/vim-code-dark",
+  {
+    -- You can generate docstrings automatically.
+    "danymat/neogen",
+    config = function()
+      require("neogen").setup {
+        enabled = true,
+        languages = {
+          python = {
+            template = {
+              annotation_convention = "numpydoc",
+            },
+          },
+        },
+      }
+    end,
+  },
+}
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- vim.api.nvim_create_autocmd("BufEnter", {
