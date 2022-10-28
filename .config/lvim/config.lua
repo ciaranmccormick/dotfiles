@@ -9,6 +9,10 @@ an executable
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 
 -- general
+vim.opt.mouse = "i"
+vim.opt.showtabline = 0
+vim.opt.relativenumber = true
+
 lvim.log.level = "warn"
 lvim.format_on_save = false
 lvim.colorscheme = "codedark"
