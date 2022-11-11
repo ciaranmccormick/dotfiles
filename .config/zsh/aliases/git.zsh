@@ -13,22 +13,28 @@ alias gfo='git fetch origin'
 alias gfod='git fetch origin $(git_develop_branch)'
 
 # git pull
-alias glum='git pull upstream $(git_main_branch)'
-alias gup='git pull --rebase'
-alias gupa='git pull --rebase --autostash'
-alias gupav='git pull --rebase --autostash -v'
-alias gupv='git pull --rebase -v'
+alias gpl='git pull'
+alias gplum='git pull upstream $(git_main_branch)'
+alias gplr='git pull --rebase'
+alias gplv='git pull --rebase -v'
 
 # git push
+alias gpu='git push'
 alias gpf='git push --force-with-lease'
 alias gpoc='git push origin $(git_current_branch)'
 alias gpof='git push origin $(git_current_branch) --force-with-lease'
 
 # git rebase
+alias grb='git rebase'
 alias grbd='git rebase $(git_develop_branch)'
 
-alias gres='git restore --staged'
+# git restore
 alias gre='git restore'
+alias gres='git restore --staged'
 
+# git status
 alias gst='git status'
+
+# git switch
+alias gsw
 alias gswd='git switch $(git_develop_branch)'
