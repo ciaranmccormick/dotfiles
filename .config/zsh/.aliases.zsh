@@ -6,7 +6,7 @@ alias ll='exa -alh'
 alias tree='exa --tree'
 
 # bat
-alias cat='batcat'
+alias cat='bat'
 
 # zoxide
 alias cd='z'
