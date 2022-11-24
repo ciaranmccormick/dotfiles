@@ -36,5 +36,5 @@ alias gres='git restore --staged'
 alias gst='git status'
 
 # git switch
-alias gsw
+alias gsw='git switch'
 alias gswd='git switch $(git_develop_branch)'
