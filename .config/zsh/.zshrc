@@ -5,7 +5,6 @@ setopt SHARE_HISTORY
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:$HOME/.local/bin
-export PATH=$PATH:$HOME/.emacs/bin
 
 autoload -Uz compinit 
 compinit
