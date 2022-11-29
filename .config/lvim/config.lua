@@ -13,59 +13,37 @@ lvim.format_on_save = true
 lvim.colorscheme = "codedark"
 lvim.builtin.bufferline.active = false
 
+lvim.builtin.which_key.mappings["t"] = {
+  name = "ToggleTerm",
+  t = { "<cmd>ToggleTerm<CR>", "Toggle Terminal" },
+  g = { "<cmd>lua _lazygit_toggle()<CR>", "Toggle Lazygit" },
+  d = { "<cmd>lua _lazydocker_toggle()<CR>", "Toggle Lazydocker" }
+}
+
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
+
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.insert_mode["jk"] = "<Esc>"
--- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
--- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
--- unmap a default keymapping
--- vim.keymap.del("n", "<C-Up>")
--- override a default keymapping
--- lvim.keys.normal_mode["<C-q>"] = ":q<cr>" -- or vim.keymap.set("n", "<C-q>", ":q<cr>" )
 
--- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
--- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
--- local _, actions = pcall(require, "telescope.actions")
--- lvim.builtin.telescope.defaults.mappings = {
---   -- for input mode
---   i = {
---     ["<C-j>"] = actions.move_selection_next,
---     ["<C-k>"] = actions.move_selection_previous,
---     ["<C-n>"] = actions.cycle_history_next,
---     ["<C-p>"] = actions.cycle_history_prev,
---   },
---   -- for normal mode
---   n = {
---     ["<C-j>"] = actions.move_selection_next,
---     ["<C-k>"] = actions.move_selection_previous,
---   },
--- }
+lvim.builtin.nvimtree.setup.view.side = "left"
+lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
+lvim.builtin.which_key.mappings["e"] = {
+  name = "NvimTree",
+  o = { "<cmd>NvimTreeFocus<CR>", "Open" },
+  c = { "<cmd>NvimTreeClose<CR>", "Close" },
+  t = { "<cmd>NvimTreeToggle<CR>", "Toggle" },
+  r = { "<cmd>NvimTreeResize<CR>", "Resize" },
+  f = { "<cmd>NvimTreeFocus<CR>", "Focus" },
+}
 
--- Change theme settings
--- lvim.builtin.theme.options.dim_inactive = true
--- lvim.builtin.theme.options.style = "storm"
-
--- Use which-key to add extra bindings with the leader-key prefix
--- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
--- lvim.builtin.which_key.mappings["t"] = {
---   name = "+Trouble",
---   r = { "<cmd>Trouble lsp_references<cr>", "References" },
---   f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
---   d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
---   q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
---   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
---   w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
--- }
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
-lvim.builtin.nvimtree.setup.view.side = "left"
-lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
@@ -82,7 +60,6 @@ lvim.builtin.treesitter.ensure_installed = {
   "java",
   "yaml",
 }
-
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
 
@@ -90,10 +67,10 @@ lvim.builtin.treesitter.highlight.enable = true
 -- generic LSP settings
 
 -- -- make sure server will always be installed even if the server is in skipped_servers list
--- lvim.lsp.installer.setup.ensure_installed = {
---     "sumneko_lua",
---     "jsonls",
--- }
+lvim.lsp.installer.setup.ensure_installed = {
+  "jsonls",
+  "pyright",
+}
 --
 -- -- change UI setting of `LspInstallInfo`
 -- -- see <https://github.com/williamboman/nvim-lsp-installer#default-configuration>
@@ -135,12 +112,8 @@ formatters.setup {
   { command = "black", filetypes = { "python" } },
   { command = "isort", filetypes = { "python" } },
   {
-    -- each formatter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
     command = "prettier",
-    ---@usage arguments to pass to the formatter
-    -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
     extra_args = { "--print-with", "100" },
-    ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
     filetypes = { "typescript", "typescriptreact" },
   },
 }
@@ -148,23 +121,15 @@ formatters.setup {
 -- -- set additional linters
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
-  {
-    -- each linter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
-    command = "shellcheck",
-    ---@usage arguments to pass to the formatter
-    -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
-    extra_args = { "--severity", "warning" },
-  },
+  { command = "shellcheck", extra_args = { "--severity", "warning" } },
   { command = "flake8", filetypes = { "python" } },
-  { command = "cspell", filetypes = { "javascript", "python", "markdown" }, },
+  { command = "cspell", filetypes = { "javascript", "markdown" } },
 }
 
 lvim.builtin.dap.active = true
 local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
 pcall(function() require("dap-python").setup(mason_path .. "packages/debugpy/venv/bin/python") end)
 pcall(function() require("dap-python").test_runner = "pytest" end)
-
--- Mappings
 lvim.builtin.which_key.mappings["dm"] = { "<cmd>lua require('dap-python').test_method()<cr>", "Test Method" }
 lvim.builtin.which_key.mappings["df"] = { "<cmd>lua require('dap-python').test_class()<cr>", "Test Class" }
 lvim.builtin.which_key.vmappings["d"] = { name = "Debug",
@@ -173,87 +138,30 @@ lvim.builtin.which_key.vmappings["d"] = { name = "Debug",
 
 
 lvim.plugins = {
-  -- You can switch between vritual environmnts.
-  "tomasiser/vim-code-dark",
-  "AckslD/swenv.nvim",
   "mfussenegger/nvim-dap-python",
-  {
-    -- You can generate docstrings automatically.
-    "danymat/neogen",
-    config = function()
-      require("neogen").setup {
-        enabled = true,
-        languages = {
-          python = {
-            template = {
-              annotation_convention = "numpydoc",
-            },
-          },
-        },
-      }
-    end,
-  },
-  {
-    "f-person/git-blame.nvim",
-    event = "BufRead",
-    config = function()
-      vim.cmd "highlight default link gitblame SpecialComment"
-      vim.g.gitblame_enabled = 0
-    end,
-  },
-  {
-    "rmagatti/goto-preview",
-    config = function()
-      require('goto-preview').setup {
-        width = 120; -- Width of the floating window
-        height = 25; -- Height of the floating window
-        default_mappings = false; -- Bind default mappings
-        debug = false; -- Print debug information
-        opacity = nil; -- 0-100 opacity level of the floating window where 100 is fully transparent.
-        post_open_hook = nil -- A function taking two arguments, a buffer and a window to be ran as a hook.
-        -- You can use "default_mappings = true" setup option
-        -- Or explicitly set keybindings
-      }
-    end
-  },
-  {
-    "tpope/vim-surround",
-    -- make sure to change the value of `timeoutlen` if it's not triggering correctly, see https://github.com/tpope/vim-surround/issues/117
-    -- setup = function()
-    --  vim.o.timeoutlen = 500
-    -- end
-  },
-  {
-    'phaazon/hop.nvim',
-    branch = 'v2', -- optional but strongly recommended
-    config = function()
-      -- you can configure Hop the way you like here; see :h hop-config
-      require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
-    end
-  }
-
+  "tomasiser/vim-code-dark",
+  -- You can switch between vritual environmnts.
+  "AckslD/swenv.nvim",
+  "tpope/vim-surround",
 }
 
-vim.cmd("nnoremap gpd <cmd>lua require('goto-preview').goto_preview_definition()<CR>")
-vim.cmd("nnoremap gpi <cmd>lua require('goto-preview').goto_preview_implementation()<CR>")
-vim.cmd("nnoremap gpc <cmd>lua require('goto-preview').close_all_win()<CR>")
-
-local hop = require('hop')
-vim.keymap.set('', 'f', function()
-  hop.hint_char2({ current_line_only = false })
-end, { remap = true })
-
--- Autocommands (https://neovim.io/doc/user/autocmd.html)
-vim.api.nvim_create_autocmd("BufEnter", {
-  pattern = { "*.json", "*.jsonc" },
-  -- enable wrap mode for json files only
-  command = "setlocal wrap",
-})
-
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "zsh",
-  callback = function()
-    -- let treesitter use bash highlight for zsh files as well
-    require("nvim-treesitter.highlight").attach(0, "bash")
-  end,
-})
+lvim.builtin.terminal.execs[#lvim.builtin.terminal.execs + 1] = { "lazydocker", "td", "Lazydocker" }
+function _lazydocker_toggle()
+  local Terminal = require("toggleterm.terminal").Terminal
+  local lazydocker = Terminal:new {
+    cmd = "lazydocker",
+    hidden = true,
+    direction = "float",
+    float_opts = {
+      border = "none",
+      width = 100000,
+      height = 100000,
+    },
+    on_open = function(_)
+      vim.cmd "startinsert!"
+    end,
+    on_close = function(_) end,
+    count = 99,
+  }
+  lazydocker:toggle()
+end
