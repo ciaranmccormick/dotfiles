@@ -8,6 +8,9 @@ alias tree='exa --tree'
 # bat
 alias cat='bat'
 
+# lazygit
+alias lg='lazygit'
+
 # zoxide
 alias cd='z'
 alias zz='z -'
