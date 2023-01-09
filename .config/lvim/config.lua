@@ -7,10 +7,10 @@ a global executable or a path to an executable
 
 -- general
 vim.opt.mouse = "i"
+lvim.colorscheme = "codedark"
 vim.opt.relativenumber = true
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "codedark"
 lvim.builtin.bufferline.active = false
 
 lvim.builtin.which_key.mappings["t"] = {
@@ -27,6 +27,7 @@ lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.insert_mode["jk"] = "<Esc>"
 
+-- NvimTree
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
 lvim.builtin.which_key.mappings["e"] = {
@@ -65,12 +66,13 @@ lvim.builtin.treesitter.highlight.enable = true
 
 
 -- generic LSP settings
-
 -- -- make sure server will always be installed even if the server is in skipped_servers list
 lvim.lsp.installer.setup.ensure_installed = {
   "jsonls",
   "pyright",
+  "marksman"
 }
+
 --
 -- -- change UI setting of `LspInstallInfo`
 -- -- see <https://github.com/williamboman/nvim-lsp-installer#default-configuration>
@@ -111,6 +113,7 @@ local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   { command = "black", filetypes = { "python" } },
   { command = "isort", filetypes = { "python" } },
+  { command = "markdownlint", filetypes = { "markdown" } },
   {
     command = "prettier",
     extra_args = { "--print-with", "100" },
@@ -123,11 +126,15 @@ local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
   { command = "shellcheck", extra_args = { "--severity", "warning" } },
   { command = "flake8", filetypes = { "python" } },
-  { command = "cspell", filetypes = { "javascript", "markdown" } },
+  { command = "cspell", extra_args = { "--locale", "en-GB" }, filetypes = { "javascript", "markdown" } },
+  { command = "markdownlint", filetypes = { "markdown" } },
 }
 
+-- DAP settings
 lvim.builtin.dap.active = true
 local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
+
+-- set up DAP Python
 pcall(function() require("dap-python").setup(mason_path .. "packages/debugpy/venv/bin/python") end)
 pcall(function() require("dap-python").test_runner = "pytest" end)
 lvim.builtin.which_key.mappings["dm"] = { "<cmd>lua require('dap-python').test_method()<cr>", "Test Method" }
@@ -137,31 +144,47 @@ lvim.builtin.which_key.vmappings["d"] = { name = "Debug",
 }
 
 
+-- add additional packages
 lvim.plugins = {
   "mfussenegger/nvim-dap-python",
   "tomasiser/vim-code-dark",
   -- You can switch between vritual environmnts.
   "AckslD/swenv.nvim",
   "tpope/vim-surround",
+  { "vimwiki/vimwiki",
+    config = function()
+      vim.g.vimwiki_global_ext = 0
+      vim.g.vimwiki_list = {
+        {
+          path = "~/vimwiki/",
+          auto_export = 1,
+          syntax = 'markdown',
+          ext = '.md',
+        }
+      }
+    end
+
+  },
 }
 
-lvim.builtin.terminal.execs[#lvim.builtin.terminal.execs + 1] = { "lazydocker", "td", "Lazydocker" }
-function _lazydocker_toggle()
-  local Terminal = require("toggleterm.terminal").Terminal
-  local lazydocker = Terminal:new {
-    cmd = "lazydocker",
-    hidden = true,
-    direction = "float",
-    float_opts = {
-      border = "none",
-      width = 100000,
-      height = 100000,
-    },
-    on_open = function(_)
-      vim.cmd "startinsert!"
-    end,
-    on_close = function(_) end,
-    count = 99,
-  }
-  lazydocker:toggle()
-end
+-- setup lazydocker
+-- lvim.builtin.terminal.execs[#lvim.builtin.terminal.execs + 1] = { "lazydocker", "td", "Lazydocker" }
+-- function _lazydocker_toggle()
+--   local Terminal = require("toggleterm.terminal").Terminal
+--   local lazydocker = Terminal:new {
+--     cmd = "lazydocker",
+--     hidden = true,
+--     direction = "float",
+--     float_opts = {
+--       border = "none",
+--       width = 100000,
+--       height = 100000,
+--     },
+--     on_open = function(_)
+--       vim.cmd "startinsert!"
+--     end,
+--     on_close = function(_) end,
+--     count = 99,
+--   }
+--   lazydocker:toggle()
+-- end
