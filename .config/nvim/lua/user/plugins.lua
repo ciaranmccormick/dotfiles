@@ -46,22 +46,18 @@ return packer.startup(function(use)
 	-- Useful lua functions used by lots of plugins
 	use({ "nvim-lua/plenary.nvim" })
 	use({ "folke/which-key.nvim" })
-
 	-- Color Scheme --
 	use({ "tomasiser/vim-code-dark" })
 	use("folke/lsp-colors.nvim")
-
 	-- Start up time --
 	use("lewis6991/impatient.nvim")
-
 	-- Status Line --
 	use({
 		"nvim-lualine/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 	})
-
+  -- Ident Blankline --
 	use("lukas-reineke/indent-blankline.nvim")
-
 	-- cmp plugins --
 	use({ "hrsh7th/nvim-cmp" })
 	use({ "hrsh7th/cmp-buffer" })
@@ -104,9 +100,7 @@ return packer.startup(function(use)
 			"kyazdani42/nvim-web-devicons",
 		},
 	})
-
 	use({ "Asheq/close-buffers.vim" })
-
 	-- Toggle Term --
 	use({ "akinsho/toggleterm.nvim" })
 

@@ -83,12 +83,22 @@ local mappings = {
   ["w"] = { "<cmd>w!<CR>", "Save" },
   ["c"] = { "<cmd>Bdelete this<CR>", "Close Buffer" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-  ["f"] = {
+  --[[ ["f"] = {
     "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
     "Find files",
+  }, ]]
+  f = {
+    name = "Find",
+    b = { "<cmd>Telescope buffers<cr>", "Find Buffers" },
+    f = { "<cmd>Telescope find_files<cr>", "Find Files" },
+    F = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+    h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
+    M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
+    r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+    R = { "<cmd>Telescope registers<cr>", "Registers" },
+    k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+    C = { "<cmd>Telescope commands<cr>", "Commands" },
   },
-  ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
-  ["b"] = { "<cmd>Telescope buffers<cr>", "Buffers" },
 
   p = {
     name = "Packer",
@@ -131,18 +141,6 @@ local mappings = {
     r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
     S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
-  },
-  s = {
-    name = "Search",
-    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-    f = { "<cmd>Telescope file_browser<cr>", "File Browser" },
-    h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
-    M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-    r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-    R = { "<cmd>Telescope registers<cr>", "Registers" },
-    k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-    C = { "<cmd>Telescope commands<cr>", "Commands" },
   },
 
   t = {
