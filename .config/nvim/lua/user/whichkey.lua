@@ -90,7 +90,7 @@ local mappings = {
   f = {
     name = "Find",
     b = { "<cmd>Telescope buffers<cr>", "Find Buffers" },
-    f = { "<cmd>Telescope find_files<cr>", "Find Files" },
+    f = { "<cmd>Telescope git_files<cr>", "Find Files" },
     F = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
     h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
     M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },

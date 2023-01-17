@@ -27,3 +27,4 @@ local opt = vim.opt
 
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.g.python3_host_prog = 0
