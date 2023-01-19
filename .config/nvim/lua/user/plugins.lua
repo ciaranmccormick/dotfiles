@@ -56,23 +56,32 @@ return packer.startup(function(use)
 		"nvim-lualine/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 	})
-  -- Ident Blankline --
+	-- Ident Blankline --
 	use("lukas-reineke/indent-blankline.nvim")
-	-- cmp plugins --
-	use({ "hrsh7th/nvim-cmp" })
-	use({ "hrsh7th/cmp-buffer" })
-	use({ "hrsh7th/cmp-path" })
-	use({ "hrsh7th/cmp-cmdline" })
-	use({ "hrsh7th/cmp-nvim-lsp" })
-	use({ "hrsh7th/cmp-nvim-lua" })
+	use({
+		"VonHeikemen/lsp-zero.nvim",
+		branch = "v1.x",
+		requires = {
+			-- LSP Support
+			{ "neovim/nvim-lspconfig" }, -- Required
+			{ "williamboman/mason.nvim" }, -- Optional
+			{ "williamboman/mason-lspconfig.nvim" }, -- Optional
 
-	-- snippets --
-	use({ "saadparwaiz1/cmp_luasnip" }) -- snippet completions
-	use({ "L3MON4D3/LuaSnip" }) --snippet engine
-	use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
+			-- Autocompletion
+			{ "hrsh7th/nvim-cmp" }, -- Required
+			{ "hrsh7th/cmp-nvim-lsp" }, -- Required
+			{ "hrsh7th/cmp-buffer" }, -- Optional
+			{ "hrsh7th/cmp-path" }, -- Optional
+			{ "hrsh7th/cmp-cmdline" },
+			{ "saadparwaiz1/cmp_luasnip" }, -- Optional
+			{ "hrsh7th/cmp-nvim-lua" }, -- Optional
 
+			-- Snippets
+			{ "L3MON4D3/LuaSnip" }, -- Required
+			{ "rafamadriz/friendly-snippets" }, -- Optional
+		},
+	})
 	-- LSP --
-	use({ "williamboman/nvim-lsp-installer", requires = { "neovim/nvim-lspconfig" } }) -- simple to use language server installer
 	use({ "jose-elias-alvarez/null-ls.nvim" })
 
 	-- Telescope --
@@ -103,6 +112,7 @@ return packer.startup(function(use)
 	use({ "Asheq/close-buffers.vim" })
 	-- Toggle Term --
 	use({ "akinsho/toggleterm.nvim" })
+	use("christoomey/vim-tmux-navigator")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

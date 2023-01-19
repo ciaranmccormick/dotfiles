@@ -13,6 +13,7 @@ local options = {
   ignorecase = true,                       -- ignore case in search patterns
   number = true,                           -- set numbered lines
   numberwidth = 4,                         -- set number column width to 2 {default 4}
+  foldlevel = 99,
   pumheight = 10,                          -- pop up menu height
   relativenumber = true,                   -- set relative numbered lines
   shiftwidth = 2,                          -- the number of spaces inserted for each indentation

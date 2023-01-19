@@ -6,7 +6,9 @@ require "user.plugins"
 
 -- Systems
 require "user.cmp"
-require "user.lsp"
+-- require "user.lsp"
+require "user.lsp-zero"
+require "user.null-ls"
 
 -- Plugins
 require "user.impatient"
