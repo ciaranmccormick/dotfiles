@@ -39,9 +39,9 @@ nvim_tree.setup { -- BEGIN_DEFAULT_OPTS
   respect_buf_cwd = false,
   view = {
     adaptive_size = false,
-    width = 20,
+    width = 50,
     hide_root_folder = false,
-    side = "left",
+    side = "right",
     preserve_window_proportions = false,
     number = true,
     relativenumber = true,

@@ -110,10 +110,12 @@ return packer.startup(function(use)
 		},
 	})
 	use({ "Asheq/close-buffers.vim" })
-	-- Toggle Term --
-	use({ "akinsho/toggleterm.nvim" })
-	use("christoomey/vim-tmux-navigator")
 
+	-- ToggleTerm --
+	use({ "akinsho/toggleterm.nvim", tag = "*" })
+
+	-- tmux navigator --
+	use("christoomey/vim-tmux-navigator")
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
