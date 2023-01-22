@@ -47,6 +47,12 @@ return {
     config = function ()
       require "custom.plugins.toggleterm"
     end
+  },
+
+	["Asheq/close-buffers.vim"] = {
+    config = function ()
+      require("Asheq/close-buffers.vim").setup()
+    end
   }
 
   -- remove plugin
