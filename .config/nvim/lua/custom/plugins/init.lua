@@ -41,6 +41,14 @@ return {
     end,
   },
 
+  -- Replace terminal
+  ["NvChad/nvterm"] = false,
+  ["akinsho/toggleterm.nvim"] = {
+    config = function ()
+      require "custom.plugins.toggleterm"
+    end
+  }
+
   -- remove plugin
   -- ["hrsh7th/cmp-path"] = false,
 }
