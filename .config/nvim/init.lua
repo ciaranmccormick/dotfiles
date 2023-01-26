@@ -1,4 +1,16 @@
--- bootstrap lazy.nvim, LazyVim and your plugins
-require("config.lazy")
-
-vim.g.loaded_python3_provider = 0
+require("user.autocmds")
+require("user.cmp")
+require("user.colorscheme")
+require("user.comment")
+require("user.gitsigns")
+require("user.icons")
+require("user.keymaps")
+require("user.lsp")
+require("user.lualine")
+require("user.nvimtree")
+require("user.options")
+require("user.plugins")
+require("user.telescope")
+require("user.toggleterm")
+require("user.treesitter")
+require("user.whichkey")
