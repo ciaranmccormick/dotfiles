@@ -67,7 +67,6 @@ local function lsp_keymaps(bufnr)
 end
 
 local function on_attach(client, bufnr)
-  vim.notify(client.name .. " starting...")
   if client.name == "tsserver" or client.name == "sumneko_lua" then
     client.server_capabilities.document_formatting = false
   end
