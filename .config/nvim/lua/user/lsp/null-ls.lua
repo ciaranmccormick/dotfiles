@@ -16,6 +16,7 @@ local settings = {
     -- python
 		f.black,
 		f.isort,
+    -- f.ruff,
     -- lua
 		f.stylua,
     -- rust
