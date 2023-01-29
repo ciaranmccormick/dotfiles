@@ -1,6 +1,4 @@
 # Setup fzf
-
-
 # Auto-completion
 # ---------------
 [[ $- == *i* ]] && source "$ZDOTDIR/plugins/fzf/shell/completion.zsh" 2> /dev/null
