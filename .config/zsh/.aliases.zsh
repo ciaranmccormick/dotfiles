@@ -21,3 +21,8 @@ for file in $ZDOTDIR/aliases/*.zsh; do
 done
 
 alias upgrade='sudo apt update; sudo apt upgrade -y'
+
+# git aliases
+alias gsw='git switch'
+alias gpu='git pull'
+alias grs='git restore'
