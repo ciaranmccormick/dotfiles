@@ -8,7 +8,7 @@ local d = null_ls.builtins.diagnostics
 local ca = null_ls.builtins.code_actions
 local settings = {
 	debug = true,
-	timeout_ms = 5000,
+	timeout_ms = 75000,
 	sources = {
 		-- formatting
     -- js/html/ts
@@ -27,7 +27,7 @@ local settings = {
 		d.flake8,
 		d.mypy,
     -- spelling/markdown
-		d.codespell,
+		-- d.codespell,
 		d.markdownlint,
 		-- code actions
 		ca.eslint,
