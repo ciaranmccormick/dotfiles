@@ -90,7 +90,8 @@ local git = {
 	-- Lazygit
 	g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "Lazygit" },
 	-- Telescope
-	b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+	h = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+	b = { "<cmd>Telescope git_bcommits<cr>", "Checkout branch" },
 	c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
 	o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
 	-- Gitsigns
@@ -122,7 +123,7 @@ local lsp = {
 	r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
 	-- Telescope
 	d = { "<cmd>Telescope diagnostics bufnr=0<cr>", "Document Diagnostics" },
-	w = { "<cmd>Telescope lsp_workspace_diagnostics<cr>", "Workspace Diagnostics" },
+	w = { "<cmd>Telescope diagnostics<cr>", "Workspace Diagnostics" },
 	s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
 	S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
 }

@@ -10,6 +10,8 @@ local settings = {
 	debug = true,
 	timeout_ms = 75000,
 	sources = {
+    -- gitsigns
+    ca.gitsigns,
 		-- formatting
     -- js/html/ts
 		f.prettier,
