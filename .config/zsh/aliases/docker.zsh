@@ -8,3 +8,4 @@ alias dcr='docker-compose run --rm'
 
 alias dps='docker ps'
 alias dv='docker volume'
+alias dvls='docker volume ls'
