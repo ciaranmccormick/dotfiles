@@ -89,4 +89,7 @@ return packer.startup(function(use)
   -- Toggle Terminal
   use({"akinsho/toggleterm.nvim"})
 
+  -- Java LSP
+  use({"mfussenegger/nvim-jdtls"})
+
 end)
