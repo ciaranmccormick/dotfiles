@@ -17,8 +17,9 @@ local settings = {
 		f.prettier,
     -- python
 		f.black,
-		f.isort,
-    -- f.ruff,
+		--f.isort,
+    f.ruff,
+    d.ruff,
     -- lua
 		f.stylua,
     -- rust
@@ -26,8 +27,8 @@ local settings = {
 		-- diagnostics
 		d.eslint,
     -- python
-		d.flake8,
-		d.mypy,
+		--d.flake8,
+		--d.mypy,
     -- spelling/markdown
 		-- d.codespell,
 		d.markdownlint,

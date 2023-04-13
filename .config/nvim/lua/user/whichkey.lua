@@ -76,13 +76,13 @@ local opts = {
 	nowait = true, -- use `nowait` when creating keymaps
 }
 
-local packer = {
-	name = "Packer",
-	c = { "<cmd>PackerCompile<cr>", "Compile" },
-	i = { "<cmd>PackerInstall<cr>", "Install" },
-	s = { "<cmd>PackerSync<cr>", "Sync" },
-	S = { "<cmd>PackerStatus<cr>", "Status" },
-	u = { "<cmd>PackerUpdate<cr>", "Update" },
+local lazy = {
+	name = "Lazy",
+	c = { "<cmd>Lazy check<cr>", "Check" },
+	i = { "<cmd>Lazy install<cr>", "Install" },
+	s = { "<cmd>Lazy sync<cr>", "Sync" },
+	l = { "<cmd>Lazy log<cr>", "Log" },
+	u = { "<cmd>Lazy update<cr>", "Update" },
 }
 
 local git = {
@@ -160,7 +160,7 @@ local mappings = {
 	["c"] = { "<cmd>bdelete %<CR>", "Close Buffer" },
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 	f = find,
-	p = packer,
+	p = lazy,
 	g = git,
 	l = lsp,
 	t = terminal,
